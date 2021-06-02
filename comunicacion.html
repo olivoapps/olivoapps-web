@@ -394,7 +394,6 @@
     // them to Checkout.
     var userInput = document.getElementById('user-input').value;
     stripe.redirectToCheckout({
-      mode: 'subscription',
 	// payment_method_types: ['card'],
   	// payment_method_types: ['sepa_debit'],
       items: [{plan: 'MM7esYqdwAfxooZ4C', quantity: parseInt(userInput)}],
