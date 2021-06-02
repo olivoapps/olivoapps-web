@@ -395,8 +395,9 @@
     var userInput = document.getElementById('user-input').value;
     stripe.redirectToCheckout({
       items: [{plan: 'MM7esYqdwAfxooZ4C', quantity: parseInt(userInput)}],
-      //payment_method_types: ['card'],
-	  //payment_method_types: ['sepa_debit'],
+      mode: 'payment',
+  	payment_method_types: ['card'],
+  	payment_method_types: ['sepa_debit'],
 	  // Do not rely on the redirect to the successUrl for fulfilling
       // purchases, customers may not always reach the success_url after
       // a successful payment.
