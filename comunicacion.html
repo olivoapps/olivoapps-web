@@ -394,10 +394,11 @@
     // them to Checkout.
     var userInput = document.getElementById('user-input').value;
     stripe.redirectToCheckout({
-      items: [{plan: 'MM7esYqdwAfxooZ4C', quantity: parseInt(userInput)}],
-	mode: 'subscription',
+      mode: 'subscription',
 	payment_method_types: ['card'],
   	payment_method_types: ['sepa_debit'],
+      items: [{plan: 'MM7esYqdwAfxooZ4C', price_data: {currency: 'eur'}, quantity: parseInt(userInput)}],
+	
 	  // Do not rely on the redirect to the successUrl for fulfilling
       // purchases, customers may not always reach the success_url after
       // a successful payment.
